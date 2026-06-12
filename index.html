@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRO KETO — мягкий вход и система без срывов | Мария Хамитова</title>
+<meta name="description" content="PRO KETO — подробный гайд Марии Хамитовой: мягкий вход в кето, система питания без подсчёта калорий и голода. Мой личный результат — минус 9 кг за 6 недель.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Golos+Text:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C211C;
+    --paper:#FFFFFF;
+    --green:#2F4A3C;
+    --green-dark:#243A2E;
+    --butter:#F6C445;
+    --butter-soft:#FBE9B3;
+    --sage:#EEF2EA;
+    --muted:#5C665C;
+    --radius:18px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+  }
+  body{
+    font-family:'Golos Text',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px}
+  section{padding:56px 0}
+
+  /* ---------- типографика ---------- */
+  h1,h2{font-family:'Unbounded',sans-serif;line-height:1.15;letter-spacing:-0.01em}
+  h1{font-size:clamp(34px,8vw,56px);font-weight:900}
+  h2{font-size:clamp(24px,5.5vw,34px);font-weight:700;margin-bottom:24px}
+  .eyebrow{
+    font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+    color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--butter);display:inline-block}
+  .hand{
+    font-family:'Caveat',cursive;font-weight:700;
+    font-size:clamp(20px,4.5vw,26px);line-height:1.2;color:var(--green);
+  }
+  .hl{ /* маркер-выделение, как триггер-текст на рилсах */
+    background:linear-gradient(180deg,transparent 55%,var(--butter) 55%,var(--butter) 92%,transparent 92%);
+    padding:0 2px;
+  }
+  p+p{margin-top:14px}
+  .muted{color:var(--muted)}
+
+  /* ---------- кнопки ---------- */
+  .btn{
+    display:inline-block;text-decoration:none;text-align:center;cursor:pointer;
+    font-family:'Golos Text',sans-serif;font-weight:600;font-size:17px;
+    padding:18px 32px;border-radius:999px;border:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:focus-visible{outline:3px solid var(--butter);outline-offset:3px}
+  .btn-main{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(47,74,60,.28)}
+  .btn-main:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(47,74,60,.34)}
+  .btn-ghost{background:transparent;color:var(--green);border:2px solid var(--green)}
+  .btn-block{display:block;width:100%}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 48px;background:
+    radial-gradient(120% 90% at 85% -10%, var(--butter-soft) 0%, transparent 55%),
+    var(--paper);}
+  .hero .hand-note{margin:10px 0 22px;transform:rotate(-1.5deg);display:inline-block}
+  .hero-sub{font-size:clamp(18px,4.2vw,21px);margin:18px 0 8px;max-width:560px}
+  .quote{
+    margin:28px 0;padding:20px 22px;border-left:4px solid var(--butter);
+    background:var(--sage);border-radius:0 var(--radius) var(--radius) 0;
+    font-size:16px;
+  }
+  .quote .author{margin-top:10px;font-size:14px;color:var(--muted)}
+  .hero-cta{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+  .price-tag{font-size:14px;color:var(--muted);text-align:center}
+
+  /* ---------- лента веса ---------- */
+  .tape{
+    background:var(--green-dark);color:#fff;padding:18px 0;overflow:hidden;
+  }
+  .tape-inner{
+    display:flex;gap:34px;justify-content:center;align-items:baseline;flex-wrap:wrap;
+    font-family:'Unbounded',sans-serif;
+  }
+  .tape .num{font-size:clamp(22px,6vw,30px);font-weight:700}
+  .tape .arrow{color:var(--butter);font-size:20px}
+  .tape .lbl{font-family:'Golos Text';font-size:13px;color:#C9D4CC;display:block;text-align:center;margin-top:2px}
+
+  /* ---------- боль ---------- */
+  .pain-list{list-style:none;margin-top:8px}
+  .pain-list li{
+    padding:14px 0 14px 38px;position:relative;border-bottom:1px dashed #D8DFD6;font-size:17px;
+  }
+  .pain-list li::before{
+    content:"—";position:absolute;left:0;top:14px;color:var(--green);font-weight:700;
+  }
+  .pain-after{margin-top:24px;font-size:18px}
+
+  /* ---------- история ---------- */
+  .story{background:var(--sage)}
+  .honest-box{
+    margin-top:28px;background:#fff;border:2px solid var(--ink);border-radius:var(--radius);
+    padding:24px;position:relative;
+  }
+  .honest-box .hand{position:absolute;top:-16px;left:22px;background:#fff;padding:0 10px;transform:rotate(-2deg)}
+  .honest-box ul{list-style:none;margin-top:8px}
+  .honest-box li{padding:8px 0 8px 30px;position:relative}
+  .honest-box li::before{content:"✕";position:absolute;left:0;color:#B0543F;font-weight:700}
+  .honest-box li.yes::before{content:"✓";color:var(--green)}
+
+  /* ---------- философия ---------- */
+  .philosophy{background:var(--green-dark);color:#fff;text-align:center}
+  .philosophy h2{color:#fff}
+  .philosophy .big-hand{
+    font-family:'Caveat',cursive;font-weight:700;color:var(--butter);
+    font-size:clamp(40px,10vw,64px);line-height:1.1;display:block;margin:18px 0;
+    transform:rotate(-1deg);
+  }
+  .philosophy p{max-width:520px;margin-left:auto;margin-right:auto;color:#DCE5DD}
+
+  /* ---------- что внутри ---------- */
+  .inside-grid{display:grid;gap:14px;margin-top:8px}
+  .inside-card{
+    background:var(--sage);border-radius:var(--radius);padding:20px 22px;
+  }
+  .inside-card .t{font-weight:600;font-size:17px;display:flex;gap:10px;align-items:flex-start}
+  .inside-card .t::before{content:"●";color:var(--butter);flex:none;margin-top:2px;font-size:12px}
+  .inside-card .d{font-size:15px;color:var(--muted);margin-top:6px;padding-left:22px}
+  .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+  .food-grid img{width:100%;display:block;border-radius:var(--radius);aspect-ratio:1/1;object-fit:cover}
+  .food-cap{margin-top:12px;text-align:center}
+
+  /* ---------- квиз ---------- */
+  .quiz{background:var(--sage)}
+  .quiz-box{background:#fff;border-radius:var(--radius);padding:26px 22px;box-shadow:0 4px 20px rgba(28,33,28,.06)}
+  .q-step{display:none}
+  .q-step.active{display:block}
+  .q-num{font-size:13px;color:var(--muted);margin-bottom:8px;font-weight:600;letter-spacing:.06em}
+  .q-q{font-weight:600;font-size:18px;margin-bottom:16px}
+  .q-opts{display:grid;gap:10px}
+  .q-opt{
+    text-align:left;background:var(--sage);border:2px solid transparent;border-radius:14px;
+    padding:14px 16px;font-size:16px;cursor:pointer;font-family:inherit;color:var(--ink);
+    transition:border-color .12s ease;
+  }
+  .q-opt:hover{border-color:var(--green)}
+  .q-opt:focus-visible{outline:3px solid var(--butter);outline-offset:2px}
+  .q-result{display:none}
+  .q-result.active{display:block}
+  .q-result .r-title{font-family:'Unbounded';font-weight:700;font-size:20px;margin-bottom:12px}
+  .q-result p{margin-bottom:18px}
+
+  /* ---------- калькулятор ---------- */
+  .calc-box{background:#fff;border-radius:var(--radius);padding:26px 22px;box-shadow:0 4px 20px rgba(28,33,28,.06)}
+  .calc-grid{display:grid;gap:14px}
+  @media(min-width:560px){.calc-grid{grid-template-columns:1fr 1fr}}
+  .calc-field label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+  .calc-field input,.calc-field select{
+    width:100%;padding:13px 14px;font-size:16px;font-family:inherit;color:var(--ink);
+    border:2px solid #DCE3DA;border-radius:12px;background:var(--sage);
+  }
+  .calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--green)}
+  .calc-btn-row{margin-top:18px}
+  .calc-out{display:none;margin-top:22px;border-top:2px dashed #DCE3DA;padding-top:20px}
+  .calc-out.show{display:block}
+  .calc-kcal{font-family:'Unbounded';font-weight:900;font-size:38px;text-align:center}
+  .calc-kcal span{font-size:15px;font-weight:500;font-family:'Golos Text';color:var(--muted);display:block;margin-top:2px}
+  .macros{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+  .macro{background:var(--sage);border-radius:14px;padding:14px 8px;text-align:center}
+  .macro .v{font-family:'Unbounded';font-weight:700;font-size:20px}
+  .macro .l{font-size:13px;color:var(--muted);margin-top:2px}
+  .macro.fat{background:var(--butter-soft)}
+  .calc-note{margin-top:18px;font-size:14px;color:var(--muted)}
+
+  /* ---------- для кого ---------- */
+  .who-grid{display:grid;gap:18px}
+  @media(min-width:560px){.who-grid{grid-template-columns:1fr 1fr}}
+  .who-card{border-radius:var(--radius);padding:24px 22px}
+  .who-yes{background:var(--sage)}
+  .who-no{background:#F7EEEA}
+  .who-card h3{font-family:'Unbounded';font-size:17px;font-weight:700;margin-bottom:14px}
+  .who-card ul{list-style:none}
+  .who-card li{padding:7px 0 7px 28px;position:relative;font-size:15.5px}
+  .who-yes li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+  .who-no li::before{content:"✕";position:absolute;left:0;color:#B0543F;font-weight:700}
+
+  /* ---------- фото ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .compare + .compare{margin-top:14px}
+  .ph{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--sage)}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/5}
+  .ph .tag{
+    position:absolute;left:10px;bottom:10px;
+    background:rgba(28,33,28,.78);color:#fff;font-size:13px;font-weight:600;
+    padding:5px 12px;border-radius:999px;backdrop-filter:blur(2px);
+  }
+  .ph.now .tag{background:var(--butter);color:var(--ink)}
+  .photo-note{margin-top:16px;text-align:center}
+  .photo-cap{margin-top:14px;font-size:14px;color:var(--muted);text-align:center}
+
+  /* ---------- цена ---------- */
+  .pricing{background:var(--sage)}
+  .plans{display:grid;gap:18px;margin-top:8px}
+  @media(min-width:560px){.plans{grid-template-columns:1fr 1.15fr;align-items:stretch}}
+  .plan{
+    background:#fff;border-radius:var(--radius);padding:28px 24px;
+    display:flex;flex-direction:column;
+  }
+  .plan-featured{
+    border:3px solid var(--green);position:relative;
+    box-shadow:0 10px 30px rgba(47,74,60,.14);
+  }
+  .plan-badge{
+    position:absolute;top:-15px;left:50%;transform:translateX(-50%) rotate(-1.5deg);
+    background:var(--butter);color:var(--ink);font-family:'Caveat';font-weight:700;
+    font-size:19px;padding:3px 16px;border-radius:999px;white-space:nowrap;
+  }
+  .plan h3{font-family:'Unbounded';font-size:19px;font-weight:700}
+  .plan .p-sub{font-size:14px;color:var(--muted);margin:6px 0 16px}
+  .plan .p-price{font-family:'Unbounded';font-size:36px;font-weight:900;margin-bottom:18px}
+  .plan .p-price span{font-size:16px;font-weight:500;color:var(--muted)}
+  .plan ul{list-style:none;margin-bottom:22px;flex:1}
+  .plan li{padding:7px 0 7px 28px;position:relative;font-size:15.5px}
+  .plan li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+  .plan li.no{color:#9AA39A}
+  .plan li.no::before{content:"—";color:#C2C9C2}
+
+  /* ---------- шаги после оплаты ---------- */
+  .steps{display:grid;gap:16px;margin-top:8px}
+  .step{display:flex;gap:16px;align-items:flex-start}
+  .step .n{
+    flex:none;width:42px;height:42px;border-radius:50%;background:var(--butter);
+    font-family:'Unbounded';font-weight:700;display:flex;align-items:center;justify-content:center;
+  }
+  .step .t{font-weight:600}
+  .step .d{font-size:15px;color:var(--muted)}
+
+  /* ---------- FAQ ---------- */
+  details{
+    border-bottom:1px solid #E0E6DE;padding:4px 0;
+  }
+  summary{
+    cursor:pointer;font-weight:600;font-size:16.5px;padding:16px 30px 16px 0;
+    list-style:none;position:relative;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:4px;top:14px;font-size:22px;color:var(--green);
+    transition:transform .15s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 0 18px;font-size:15.5px;color:var(--muted)}
+
+  /* ---------- финал ---------- */
+  .final{background:var(--green-dark);color:#fff;text-align:center;padding:72px 0}
+  .final h2{color:#fff}
+  .final p{color:#DCE5DD;max-width:520px;margin:0 auto 28px}
+  .final .btn-main{background:var(--butter);color:var(--ink);box-shadow:0 8px 22px rgba(0,0,0,.3)}
+
+  footer{padding:36px 0;font-size:13px;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+
+  /* ---------- липкая панель ---------- */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:#fff;border-top:1px solid #E4E9E2;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    display:flex;align-items:center;gap:14px;justify-content:space-between;
+    transform:translateY(110%);transition:transform .25s ease;
+    box-shadow:0 -6px 24px rgba(28,33,28,.08);
+  }
+  .sticky-cta.show{transform:translateY(0)}
+  .sticky-cta .sp{font-family:'Unbounded';font-weight:700;font-size:18px;white-space:nowrap}
+  .sticky-cta .sp span{display:block;font-family:'Golos Text';font-weight:500;font-size:12px;color:var(--muted)}
+  .sticky-cta .btn{padding:13px 22px;font-size:15px;flex:none}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Гайд от Марии Хамитовой · @hamitovamaria</div>
+    <h1>PRO KETO</h1>
+    <span class="hand hand-note">мягкий вход — без героизма и голодных глаз</span>
+    <p class="hero-sub">Система питания, на которой я сделала <span class="hl">−9&nbsp;кг за 6&nbsp;недель</span> — без подсчёта калорий, без запрета «всего вкусного навсегда» и без срывов по пятницам.</p>
+    <p class="muted" style="font-size:14px">−9 кг — это мой личный результат, а не обещание. Твоё тело пойдёт своим темпом. Но система — та же.</p>
+
+    <div class="quote">
+      «Пицца, роллы, винишко, вкусняшки — всё это у меня уже было. <b>Много раз.</b> А вот красивого подтянутого тела — не было. И я выбрала то, чего у меня ещё нет.»
+      <div class="author">— Мария, автор гайда</div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn btn-main btn-block" href="https://payform.ru/58bKuM4/">Забрать гайд за 909 ₽</a>
+      <div class="price-tag">Оплата картой · гайд приходит на почту сразу после оплаты</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ЛЕНТА ВЕСА ============ -->
+<div class="tape" aria-label="Мой путь в цифрах">
+  <div class="wrap tape-inner">
+    <div><span class="num">86</span><span class="lbl">старт</span></div>
+    <div class="arrow">→</div>
+    <div><span class="num">77</span><span class="lbl">сейчас</span></div>
+    <div class="arrow">→</div>
+    <div><span class="num">…</span><span class="lbl">путь продолжается</span></div>
+  </div>
+</div>
+
+<!-- ============ ФОТО ============ -->
+<section class="story">
+  <div class="wrap">
+    <div class="eyebrow">Честный путь</div>
+    <h2>Моё «до / сейчас» — без фильтров</h2>
+
+    <div class="compare">
+      <div class="ph"><img src="do-side.jpg" alt="Мария до, вид сбоку, 86 кг"><span class="tag">до · 86 кг</span></div>
+      <div class="ph now"><img src="now-side.jpg" alt="Мария сейчас, вид сбоку, 77 кг"><span class="tag">сейчас · 77 кг</span></div>
+    </div>
+    <div class="compare">
+      <div class="ph"><img src="do-front.jpg" alt="Мария до, вид спереди, 86 кг" loading="lazy"><span class="tag">до · 86 кг</span></div>
+      <div class="ph now"><img src="now-front.jpg" alt="Мария сейчас, вид спереди, 77 кг" loading="lazy"><span class="tag">сейчас · 77 кг</span></div>
+    </div>
+
+    <p class="photo-cap">Это скрины из видео — не позирование, не «удачный свет» и не фотошоп. 6 недель между кадрами.</p>
+    <p class="photo-note"><span class="hand">да, обычная квартира, обычный пылесос, обычная я — именно «сейчас», а не «после»: я ещё в пути 🤍</span></p>
+  </div>
+</section>
+
+<!-- ============ БОЛЬ ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Узнаёшь себя?</div>
+    <h2>Если хоть один пункт — про тебя</h2>
+    <ul class="pain-list">
+      <li>Худеешь с понедельника. Каждый понедельник.</li>
+      <li>Держишься неделю на ПП — а потом сметаешь всё, до чего дотянулась.</li>
+      <li>Считала калории, и тебя хватило ровно на 12 дней.</li>
+      <li>После обеда хочется лечь и умереть, а к вечеру — сладкого.</li>
+      <li>Знаешь про питание «всё», но тело почему-то об этом не в курсе.</li>
+    </ul>
+    <p class="pain-after">Это не слабая сила воли. Это <span class="hl">система питания, которая работает против тебя</span>. Я была там же — и нашла выход не через «жрать меньше», а через «есть по-другому».</p>
+  </div>
+</section>
+
+<!-- ============ ИСТОРИЯ ============ -->
+<section class="story">
+  <div class="wrap">
+    <div class="eyebrow">Кто я и почему мне можно верить</div>
+    <h2>Я не нутрициолог. И это моя сила</h2>
+    <p>Я обычный человек, который перепробовал всё то же, что и ты. Диеты, подсчёты, марафоны, «больше двигайся — меньше ешь». Результат был один: минус настроение, плюс срыв.</p>
+    <p>Потом я разобралась, как на самом деле работает моё тело — и собрала систему мягкого входа в кето. Без жёсткого старта, без «выкинь всё из холодильника», без голода. За 6 недель — минус 9 кг. И главное: <span class="hl">без единого срыва</span>, потому что срываться стало не с чего.</p>
+    <p>Весь путь я показываю в блоге как есть: с цифрами, тарелками и честными «сегодня было тяжело».</p>
+
+    <div class="honest-box">
+      <span class="hand">давай честно ↓</span>
+      <ul>
+        <li>Я <b>не обещаю</b>, что ты сбросишь 9 кг за 6 недель — это мой результат, твой будет твоим</li>
+        <li>Это <b>не</b> волшебная таблетка и не «ешь что хочешь и худей»</li>
+        <li class="yes">Это рабочая система, которую я прошла на себе и расписала по шагам</li>
+        <li class="yes">Я всё ещё в пути к своей цели — и не делаю вид, что уже «после»</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ФИЛОСОФИЯ ============ -->
+<section class="philosophy">
+  <div class="wrap">
+    <h2>Главный принцип системы</h2>
+    <span class="big-hand">тело не дура</span>
+    <p>Тяга к сладкому, вечерний жор, упадок сил — это не твои «косяки». Это сигналы. Тело отвечает на то, чем ты его кормишь. Поменяй топливо — и оно перестанет требовать догнаться булкой. В гайде я объясняю, как это устроено, простым языком — без занудства и страшных терминов.</p>
+  </div>
+</section>
+
+<!-- ============ ЧТО ВНУТРИ ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Что внутри за 909 ₽</div>
+    <h2>Не мотивашка, а инструкция</h2>
+    <div class="inside-grid">
+      <div class="inside-card">
+        <div class="t">Мягкий вход: первые 2 недели по шагам</div>
+        <div class="d">Что убрать, что добавить и в каком порядке — чтобы тело перестроилось без ломки и «кето-гриппа» на ровном месте.</div>
+      </div>
+      <div class="inside-card">
+        <div class="t">Полная база: как работает кето на пальцах</div>
+        <div class="d">Почему уходит тяга к сладкому, откуда берётся энергия и что происходит с весом — понятным языком.</div>
+      </div>
+      <div class="inside-card">
+        <div class="t">Продуктовая корзина и список покупок</div>
+        <div class="d">Что брать в обычном магазине, без редких суперфудов за конские деньги.</div>
+      </div>
+      <div class="inside-card">
+        <div class="t">Все мои рецепты</div>
+        <div class="d">Завтраки, обеды, ужины и та самая «вкусняшка без срыва» — то, что я ем сама. В лайт-версии гайда их нет.</div>
+      </div>
+      <div class="inside-card">
+        <div class="t">Что делать, если сорвалась</div>
+        <div class="d">Протокол возврата без самобичевания: один день ничего не решает, если знаешь, как вернуться.</div>
+      </div>
+      <div class="inside-card">
+        <div class="t">Кафе, гости, праздники</div>
+        <div class="d">Как не выпадать из системы, когда жизнь происходит — а она происходит постоянно.</div>
+      </div>
+    </div>
+
+    <div class="food-grid">
+      <img src="food-1.jpg" alt="Ролл из омлета с лососем, огурцом и укропом" loading="lazy">
+      <img src="food-2.jpg" alt="Яичница с томатами и салатом из рукколы" loading="lazy">
+      <img src="food-3.jpg" alt="Лосось с салатом и томатами" loading="lazy">
+      <img src="food-4.jpg" alt="Стейк лосося со шпинатом и огурцом" loading="lazy">
+    </div>
+    <p class="food-cap"><span class="hand">это мои реальные тарелки по рецептам из гайда — так выглядит «диета» без голода ↑</span></p>
+  </div>
+</section>
+
+<!-- ============ КВИЗ ============ -->
+<section class="quiz">
+  <div class="wrap">
+    <div class="eyebrow">30 секунд</div>
+    <h2>Проверь, твоя ли это история</h2>
+    <div class="quiz-box" id="quiz">
+
+      <div class="q-step active" data-step="1">
+        <div class="q-num">Вопрос 1 из 4</div>
+        <div class="q-q">Тянет на сладкое или мучное?</div>
+        <div class="q-opts">
+          <button class="q-opt" data-score="2">Да, постоянно — особенно к вечеру</button>
+          <button class="q-opt" data-score="1">Бывает, волнами</button>
+          <button class="q-opt" data-score="0">Почти нет</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="2">
+        <div class="q-num">Вопрос 2 из 4</div>
+        <div class="q-q">Как с энергией днём?</div>
+        <div class="q-opts">
+          <button class="q-opt" data-score="2">После еды хочется спать, к вечеру выжата</button>
+          <button class="q-opt" data-score="1">Качели: то норм, то провал</button>
+          <button class="q-opt" data-score="0">Стабильно бодрая</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="3">
+        <div class="q-num">Вопрос 3 из 4</div>
+        <div class="q-q">Пробовала худеть на диетах или подсчётах?</div>
+        <div class="q-opts">
+          <button class="q-opt" data-score="2">Много раз — вес возвращался</button>
+          <button class="q-opt" data-score="1">Пару раз, не дотерпела</button>
+          <button class="q-opt" data-score="0">Не пробовала</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="4">
+        <div class="q-num">Вопрос 4 из 4</div>
+        <div class="q-q">Что бесит больше всего?</div>
+        <div class="q-opts">
+          <button class="q-opt" data-score="2">Срывы: держусь-держусь, а потом всё насмарку</button>
+          <button class="q-opt" data-score="1">Голод и постоянные мысли о еде</button>
+          <button class="q-opt" data-score="1">Что ничего не понятно: все говорят разное</button>
+        </div>
+      </div>
+
+      <div class="q-result" id="resultHigh">
+        <div class="r-title">Ты — это я полгода назад</div>
+        <p>Тяга, качели энергии, срывы после диет — это классический набор, с которым кето-подход работает лучше всего. Не потому что «кето — магия», а потому что он убирает саму причину тяги. Именно для такого старта я и писала гайд.</p>
+        <a class="btn btn-main btn-block" href="https://payform.ru/58bKuM4/">Начать мягкий вход — 909 ₽</a>
+      </div>
+
+      <div class="q-result" id="resultMid">
+        <div class="r-title">Тебе нужна система, а не очередная диета</div>
+        <p>Судя по ответам, проблема не в дисциплине — её у тебя хватает. Проблема в том, что прежние подходы работали против твоего тела. В гайде я по шагам показываю, как выстроить питание так, чтобы не приходилось «держаться».</p>
+        <a class="btn btn-main btn-block" href="https://payform.ru/58bKuM4/">Посмотреть систему — 909 ₽</a>
+      </div>
+
+      <div class="q-result" id="resultLow">
+        <div class="r-title">Похоже, у тебя всё неплохо!</div>
+        <p>Острой тяги и качелей у тебя нет — честно скажу: бежать и срочно покупать ничего не надо. Но если хочешь разобраться, как питание влияет на энергию и форму, и навести порядок в системе — гайд это закроет.</p>
+        <a class="btn btn-ghost btn-block" href="https://payform.ru/58bKuM4/">Изучить гайд — 909 ₽</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ КАЛЬКУЛЯТОР ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Твоя точка А</div>
+    <h2>Кето-калькулятор: стартовая норма</h2>
+    <p style="margin-bottom:22px">Посчитай свой ориентир по калориям и БЖУ под кето. Это <span class="hl">не для ежедневных подсчётов</span> — в системе их нет. Это чтобы один раз понять свою точку А и собрать тарелку правильно.</p>
+
+    <div class="calc-box">
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label for="cSex">Пол</label>
+          <select id="cSex">
+            <option value="f">Женский</option>
+            <option value="m">Мужской</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="cAge">Возраст, лет</label>
+          <input id="cAge" type="number" inputmode="numeric" min="18" max="80" placeholder="34">
+        </div>
+        <div class="calc-field">
+          <label for="cHeight">Рост, см</label>
+          <input id="cHeight" type="number" inputmode="numeric" min="120" max="220" placeholder="168">
+        </div>
+        <div class="calc-field">
+          <label for="cWeight">Вес, кг</label>
+          <input id="cWeight" type="number" inputmode="decimal" min="40" max="200" placeholder="77">
+        </div>
+        <div class="calc-field">
+          <label for="cAct">Активность</label>
+          <select id="cAct">
+            <option value="1.2">Минимальная (сидячая работа)</option>
+            <option value="1.375" selected>Лёгкая (прогулки, 1–2 тренировки)</option>
+            <option value="1.55">Средняя (3–5 тренировок)</option>
+            <option value="1.725">Высокая (спорт почти каждый день)</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="cGoal">Цель</label>
+          <select id="cGoal">
+            <option value="loss" selected>Снижение веса</option>
+            <option value="keep">Поддержание</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-btn-row">
+        <button class="btn btn-main btn-block" id="cBtn" type="button">Посчитать</button>
+      </div>
+
+      <div class="calc-out" id="cOut">
+        <div class="calc-kcal"><span id="cKcal"></span><span>ккал в день — твой стартовый ориентир</span></div>
+        <div class="macros">
+          <div class="macro fat"><div class="v" id="cFat"></div><div class="l">жиры, г</div></div>
+          <div class="macro"><div class="v" id="cProt"></div><div class="l">белки, г</div></div>
+          <div class="macro"><div class="v" id="cCarb"></div><div class="l">углеводы, г</div></div>
+        </div>
+        <p class="calc-note">Это усреднённый расчёт для здорового взрослого человека, а не медицинская рекомендация. В гайде я показываю, как выйти на эти пропорции через состав тарелки — без весов и приложений. Цифры посчитала? Дальше система сделает всё за тебя.</p>
+        <a class="btn btn-main btn-block" href="https://payform.ru/58bKuM4/" style="margin-top:14px">Забрать систему — 909 ₽</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ДЛЯ КОГО ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Без иллюзий</div>
+    <h2>Кому зайдёт, а кому — нет</h2>
+    <div class="who-grid">
+      <div class="who-card who-yes">
+        <h3>Тебе — да, если ты:</h3>
+        <ul>
+          <li>Устала от срывов и качелей «диета — зажор»</li>
+          <li>Не хочешь считать калории и взвешивать гречку</li>
+          <li>Готова менять питание, а не искать таблетку</li>
+          <li>Хочешь понятный план, а не «слушай своё тело» без инструкции</li>
+        </ul>
+      </div>
+      <div class="who-card who-no">
+        <h3>Не покупай, если ты:</h3>
+        <ul>
+          <li>Ждёшь «минус 10 за неделю» — таких обещаний тут нет</li>
+          <li>Беременна, кормишь или имеешь заболевания, при которых питание меняется только с врачом</li>
+          <li>Не готова менять вообще ничего</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ЦЕНА ============ -->
+<section class="pricing" id="price">
+  <div class="wrap">
+    <div class="eyebrow">Выбирай свой вариант</div>
+    <h2>Два формата — одна система</h2>
+    <div class="plans">
+
+      <div class="plan">
+        <h3>Лето без срывов</h3>
+        <div class="p-sub">Лайт-версия: только база</div>
+        <div class="p-price">390 <span>₽</span></div>
+        <ul>
+          <li>Вся база системы кратко</li>
+          <li>Основные принципы без воды</li>
+          <li class="no">Без рецептов</li>
+          <li class="no">Без подробного плана входа по шагам</li>
+          <li class="no">Без разборов «срыв / кафе / праздники»</li>
+        </ul>
+        <a class="btn btn-ghost btn-block" href="https://payform.ru/7jbE5zI/">Взять лайт за 390 ₽</a>
+      </div>
+
+      <div class="plan plan-featured">
+        <span class="plan-badge">его беру я ←</span>
+        <h3>PRO KETO</h3>
+        <div class="p-sub">Полный гайд: система + рецепты + план</div>
+        <div class="p-price">909 <span>₽</span></div>
+        <ul>
+          <li>Вся база — подробно и с объяснениями</li>
+          <li>Мягкий вход: первые 2 недели по шагам</li>
+          <li>Все мои рецепты: завтраки, обеды, ужины, вкусняшки</li>
+          <li>Протокол «если сорвалась»</li>
+          <li>Кафе, гости, праздники — как жить в системе</li>
+          <li>Бонус: книга рецептов</li>
+        </ul>
+        <a class="btn btn-main btn-block" href="https://payform.ru/58bKuM4/">Забрать полный — 909 ₽</a>
+      </div>
+
+    </div>
+    <p class="muted" style="margin-top:20px;font-size:14px;text-align:center">909 ₽ — это один поход в кофейню с десертом. Только десерт закончится через 10 минут, а система останется с тобой.</p>
+  </div>
+</section>
+
+<!-- ============ ПОСЛЕ ОПЛАТЫ ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Никакой магии — всё просто</div>
+    <h2>Что будет после оплаты</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div>
+          <div class="t">Оплачиваешь картой через защищённую форму</div>
+          <div class="d">Приём платежей — через сервис Prodamus, я ИП и работаю официально.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div>
+          <div class="t">Гайд приходит на почту в течение пары минут</div>
+          <div class="d">Проверь «Спам» и «Промоакции», если письма не видно. Не пришло — напиши мне, решим.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div>
+          <div class="t">Открываешь и начинаешь с первого шага</div>
+          <div class="d">Не нужно ждать понедельника. Серьёзно. Особенно понедельника.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="story">
+  <div class="wrap">
+    <div class="eyebrow">Частые вопросы</div>
+    <h2>Спрашивали — отвечаю</h2>
+
+    <details>
+      <summary>Я ничего не понимаю в кето. Разберусь?</summary>
+      <div class="a">Гайд писался именно для новичков. Никаких «кетоз, глюконеогенез, разберись сама» — всё объяснено простым языком, по шагам, с готовыми списками продуктов и рецептами.</div>
+    </details>
+    <details>
+      <summary>Придётся голодать или считать калории?</summary>
+      <div class="a">Нет. Вся суть системы в том, что ты ешь сытно и не считаешь. Уходит сама тяга — поэтому не приходится «терпеть».</div>
+    </details>
+    <details>
+      <summary>Чем полный гайд отличается от «Лета без срывов»?</summary>
+      <div class="a">«Лето без срывов» — это краткая база: основные принципы без подробностей. В PRO KETO — полная система: пошаговый план входа на первые 2 недели, все рецепты, разборы ситуаций (срывы, кафе, праздники) и бонусная книга рецептов.</div>
+    </details>
+    <details>
+      <summary>Я сброшу 9 кг за 6 недель, как ты?</summary>
+      <div class="a">Честно: не знаю. −9 кг за 6 недель — мой личный результат, и я не обещаю его тебе. Стартовый вес, образ жизни, здоровье — у всех разное. Я даю систему, которая сработала у меня, а темп у твоего тела будет свой.</div>
+    </details>
+    <details>
+      <summary>Есть ли противопоказания?</summary>
+      <div class="a">Да, как у любого изменения питания. Если ты беременна, кормишь грудью или у тебя есть хронические заболевания (особенно ЖКТ, почки, диабет) — сначала поговори с врачом. Это важно, и я пишу об этом прямо.</div>
+    </details>
+    <details>
+      <summary>В каком формате гайд и как его получить?</summary>
+      <div class="a">PDF-файл, открывается на телефоне и компьютере. Приходит на почту автоматически сразу после оплаты — ссылка на скачивание будет в письме.</div>
+    </details>
+    <details>
+      <summary>А если у меня не получится?</summary>
+      <div class="a">Сорваться — не значит провалиться. В гайде есть отдельный раздел, что делать после срыва, чтобы вернуться за день, а не бросить всё. Это, пожалуй, самая важная глава.</div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ФИНАЛ ============ -->
+<section class="final">
+  <div class="wrap">
+    <h2>Пицца у тебя уже была.<br>Много раз.</h2>
+    <p>А тело, в котором хочется жить, носить что нравится и не прятаться на фото — его ещё нет. Выбери то, чего у тебя ещё не было.</p>
+    <a class="btn btn-main" href="https://payform.ru/58bKuM4/">Забрать PRO KETO за 909 ₽</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>ИП Хамитова Мария Сергеевна</b><br>
+    ИНН 660110089951 · ОГРНИП 324665800215338</p>
+    <p style="margin-top:10px"><a href="mailto:macha91@mail.ru">macha91@mail.ru</a> · <a href="https://instagram.com/hamitovamaria" rel="noopener">@hamitovamaria</a></p>
+    <p style="margin-top:10px"><a href="politika.html">Политика конфиденциальности</a> · <a href="oferta.html">Публичная оферта</a></p>
+    <p style="margin-top:14px">Гайд носит информационный характер и не является медицинской рекомендацией.<br>
+    Перед изменением питания при наличии заболеваний проконсультируйся с врачом.</p>
+  </div>
+</footer>
+
+<!-- ============ ЛИПКАЯ ПАНЕЛЬ ============ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sp">909 ₽<span>гайд сразу на почту</span></div>
+  <a class="btn btn-main" href="https://payform.ru/58bKuM4/">Забрать гайд</a>
+</div>
+
+<script>
+  // ---- квиз ----
+  (function(){
+    var quiz = document.getElementById('quiz');
+    var steps = quiz.querySelectorAll('.q-step');
+    var score = 0, current = 0;
+    quiz.addEventListener('click', function(e){
+      var btn = e.target.closest('.q-opt');
+      if(!btn) return;
+      score += parseInt(btn.getAttribute('data-score'), 10);
+      steps[current].classList.remove('active');
+      current++;
+      if(current < steps.length){
+        steps[current].classList.add('active');
+      } else {
+        var id = score >= 6 ? 'resultHigh' : (score >= 3 ? 'resultMid' : 'resultLow');
+        document.getElementById(id).classList.add('active');
+      }
+    });
+  })();
+
+  // ---- калькулятор ----
+  (function(){
+    var btn = document.getElementById('cBtn');
+    btn.addEventListener('click', function(){
+      var sex = document.getElementById('cSex').value;
+      var age = parseFloat(document.getElementById('cAge').value);
+      var h = parseFloat(document.getElementById('cHeight').value);
+      var w = parseFloat(document.getElementById('cWeight').value);
+      var act = parseFloat(document.getElementById('cAct').value);
+      var goal = document.getElementById('cGoal').value;
+      if(!age || !h || !w){ alert('Заполни возраст, рост и вес 🙂'); return; }
+
+      // Миффлин — Сан Жеор
+      var bmr = 10*w + 6.25*h - 5*age + (sex === 'm' ? 5 : -161);
+      var tdee = bmr * act;
+      var kcal = goal === 'loss' ? tdee * 0.85 : tdee; // мягкие -15%, без жёстких урезаний
+      var floor = sex === 'm' ? 1500 : 1200;           // безопасный минимум
+      kcal = Math.max(Math.round(kcal), floor);
+
+      // кето-пропорции: белок ~1.6 г/кг, углеводы ~7% (до 30 г), остальное — жиры
+      var prot = Math.round(w * 1.6);
+      var carb = Math.min(Math.round(kcal * 0.07 / 4), 30);
+      var fat = Math.round((kcal - prot*4 - carb*4) / 9);
+
+      document.getElementById('cKcal').textContent = kcal;
+      document.getElementById('cFat').textContent = fat;
+      document.getElementById('cProt').textContent = prot;
+      document.getElementById('cCarb').textContent = carb;
+      document.getElementById('cOut').classList.add('show');
+    });
+  })();
+
+  // ---- липкая панель: показываем после хиро, прячем у блока цены и в конце ----
+  (function(){
+    var bar = document.getElementById('stickyCta');
+    var hero = document.querySelector('.hero');
+    var price = document.getElementById('price');
+    var final = document.querySelector('.final');
+    function onScroll(){
+      var heroGone = hero.getBoundingClientRect().bottom < 0;
+      var priceVisible = price.getBoundingClientRect().top < window.innerHeight && price.getBoundingClientRect().bottom > 0;
+      var finalVisible = final.getBoundingClientRect().top < window.innerHeight;
+      bar.classList.toggle('show', heroGone && !priceVisible && !finalVisible);
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+
+</body>
+</html>
